@@ -1,0 +1,168 @@
+.container{
+    display: grid;
+    grid-template-columns: 33% 65.5%;
+    height: 90vh;
+    gap: 20px;
+    padding: 0px 8px;
+}
+.product-add, .product{
+    background: rgb(238, 238, 238);
+    height: 90vh;
+    border-radius: 5px;
+}
+.search-add {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.search-add>input{
+    width: 90%;
+    padding: 5px;
+    font-size: 15px;
+    outline: none;
+}
+.group-add {
+    margin-top: 20px;
+    height: 55vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card-add{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 90%;
+    height: 30px;
+    background: rgb(145, 191, 138);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 5px;
+}
+.card-add>i {
+    width: 25px;
+    height: 25px;
+    background: red;
+}
+
+p{
+    font-size: 13px;
+}
+.total-pay{
+    margin-top: 35px;
+    height: 17vh;
+    border-radius: 0px 0px 3px 3px;
+    border-top: 1px solid rgb(149, 149, 149);
+    background: rgb(185, 185, 185);
+}
+.total-product {
+    background: rgb(184, 177, 177);
+    display: flex;
+    justify-content: space-evenly;
+    height: 30px;
+    align-items: center;
+}
+.group-btn-pay {
+    display: flex;
+    justify-content: end;
+    margin-top: 30px;
+}
+.pay, .cancel {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 4px;
+}
+.cancel{
+    background: red;
+    color: white;
+}
+.pay {
+    background: rgb(4, 165, 4);
+    color: white;
+}
+
+.pay>i, .cancel>i {
+    height: 30px;
+    width: 30px;
+    margin-left: 0px;
+    border-radius: 4px 0px 0px 4px;
+}
+.cancel>i {
+    background: rgb(184, 2, 2);
+}
+
+/* --------Product--------------- */
+.navbar {
+    height: 12vh;
+    display: flex;
+    align-items: center;
+    background: rgb(190, 190, 190);
+}
+.search-product {
+    width: 50%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-product>input {
+    padding: 5px;
+    font-size: 15px;
+    width: 90%;
+    outline: none;
+}
+.type-bar {
+    margin-left: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 35%;
+    height: 30px;
+    gap: 3px;
+}
+.type-bar > p {
+    background: pink;
+    padding: 7px 3px;
+    text-align: center;
+    align-self: center;
+    border-radius: 3px;
+}
+
+/* --product-content--- */
+.product-content {
+    width: 100%;
+    height: 77vh;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.card-product {
+    padding: 5px 0px 0px 0px;
+    background: rgb(238, 254, 243);
+    height: 160px;
+    display: grid;
+    grid-template-rows: 1.5fr 0.3fr 1fr;
+    gap: 10px;
+    justify-items: center;
+    border: 1px solid rgb(173, 255, 170);
+    border-radius: 5px;
+}
+.cardfooter {
+    border-top: 1px solid rgb(139, 139, 139);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background: white;
+    border-radius: 0px 0px 5px 5px;
+}
+.card-product>h4 {
+    color: rgb(1, 149, 1);
+}
