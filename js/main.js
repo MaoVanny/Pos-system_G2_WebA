@@ -1,6 +1,8 @@
 
 let groupProduct = document.querySelector('.product-content');
 let groupAdd = document.querySelector('.group-add');
+let searchP = document.querySelector('.search-product input');
+
 
 let addData = [];
 let myData = [
@@ -61,6 +63,12 @@ function displayItemlist(event){
     let minus = document.createElement('button');
     minus.setAttribute('class', 'minus');
     minus.textContent = '-';
+    minus.addEventListener('click', (e)=>{
+        let cardadd = e.target.parentElement.children[1];
+        if (parseInt(cardadd.textContent) > 0){
+            e.target.parentElement.children[1].textContent = parseInt(e.target.parentElement.children[1].textContent) - 1;
+        }
+    });
 
     let qualitySpan = document.createElement('span');
     qualitySpan.textContent = '1';
@@ -71,7 +79,7 @@ function displayItemlist(event){
     plus.addEventListener('click', (e)=>{
         let cardadd = e.target.parentElement.children[1];
         if (parseInt(cardadd.textContent) < parseInt(cardData.children[2].children[0].children[0].textContent)){
-            e.target.parentElement.children[1] = parseInt
+            e.target.parentElement.children[1].textContent = parseInt(e.target.parentElement.children[1].textContent) + 1;
         }
         
     });
@@ -156,5 +164,11 @@ function displayCard (){
         creatCard(card);
     }
 }
+
+// search-------------------------------------//
+// function searchProduct(){
+//     let h4 = document.querySelectorAll('h4');
+//     for (let )
+// }
 
 displayCard();
