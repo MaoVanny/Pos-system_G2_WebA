@@ -1,12 +1,12 @@
 .container{
     display: grid;
-    grid-template-columns: 33% 65.5%;
+    grid-template-columns: 65.5% 33%;
     height: 90vh;
     gap: 20px;
     padding: 0px 8px;
 }
 .product-add, .product{
-    background: rgb(238, 238, 238);
+    background: rgb(30, 30, 30);
     height: 90vh;
     border-radius: 5px;
 }
@@ -34,11 +34,13 @@
     margin-bottom: 5px;
     width: 90%;
     height: 30px;
-    background: rgb(145, 191, 138);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2px 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(247, 49, 49);
+    color: white;
 }
 .card-add>i {
     width: 25px;
@@ -53,11 +55,11 @@ p{
     margin-top: 35px;
     height: 17vh;
     border-radius: 0px 0px 3px 3px;
-    border-top: 1px solid rgb(149, 149, 149);
-    background: rgb(185, 185, 185);
+    background: rgb(30, 30, 30);
 }
 .total-product {
-    background: rgb(184, 177, 177);
+    color: white;
+    background: rgba(240, 51, 51, 0.861);
     display: flex;
     justify-content: space-evenly;
     height: 30px;
@@ -92,7 +94,7 @@ p{
     border-radius: 4px 0px 0px 4px;
 }
 .cancel>i {
-    background: rgb(184, 2, 2);
+    background: rgb(201, 7, 7);
 }
 
 /* --------Product--------------- */
@@ -100,7 +102,7 @@ p{
     height: 12vh;
     display: flex;
     align-items: center;
-    background: rgb(190, 190, 190);
+    background: rgb(30, 30, 30);
 }
 .search-product {
     width: 50%;
@@ -125,15 +127,17 @@ p{
     gap: 3px;
 }
 .type-bar > p {
-    background: pink;
+    background: rgb(230, 48, 48);
     padding: 7px 3px;
     text-align: center;
     align-self: center;
     border-radius: 3px;
+    color: white;
 }
 
 /* --product-content--- */
 .product-content {
+    background: #000;
     width: 100%;
     height: 77vh;
     overflow-y: scroll;
@@ -141,28 +145,118 @@ p{
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 10px;
 }
-
 .card-product {
     padding: 5px 0px 0px 0px;
-    background: rgb(238, 254, 243);
-    height: 160px;
+    background: rgba(27, 25, 25, 0.766);
+    height: auto;
     display: grid;
-    grid-template-rows: 1.5fr 0.3fr 1fr;
-    gap: 10px;
+    grid-template-rows: 1.5fr 0.1fr 1fr;
+    gap: 5px;
     justify-items: center;
-    border: 1px solid rgb(173, 255, 170);
     border-radius: 5px;
 }
 .cardfooter {
-    border-top: 1px solid rgb(139, 139, 139);
+    border-top: 1px solid rgb(255, 89, 89);
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    background: white;
     border-radius: 0px 0px 5px 5px;
 }
-.card-product>h4 {
-    color: rgb(1, 149, 1);
+.cardfooter>p {
+    margin-top: 5px;
+    color: white;
 }
+.cardfooter>.btn-add{
+    margin: 10px 0px;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 20px;
+    padding: 3px;
+    background: rgb(230, 48, 48);
+    color: white;
+}
+.card-product>h4 {
+    margin-top: 0px;
+    color: rgb(255, 255, 255);
+}
+.product-img {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 80px;
+    background-position: center;
+}
+
+.minus, .plus {
+    border: none;
+    background: rgb(244, 64, 64);
+    font-size: 20px;
+    color: white;
+    width: 20px;
+    height: 20px;
+}
+
+
+
+/* Login form */
+.login {
+    display: flex;
+    justify-content: center;
+}
+
+
+.card-login {
+    border: 3px solid black;
+    height: 475px;
+    width: 480px;
+    margin-top: 60px;
+    border-radius: 20px;
+    background-color: aliceblue;
+
+}
+
+.card-login:hover {
+    box-shadow: -23px -9px 131px 5px rgba(255,255,255,0.67);
+-webkit-box-shadow: -23px -9px 131px 5px rgba(255,255,255,0.67);
+-moz-box-shadow: -23px -9px 131px 5px rgba(255,255,255,0.67);
+}
+
+.img {
+    width: 250px;
+    height: 250px;
+    margin-left: 25%;
+}
+
+.loginInput {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+
+input[type='text'] {
+    margin-top: 10px;
+    width: 90%;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    border-bottom: 0.5px black solid;
+    margin-left: -2px;
+}
+
+.btn {
+    display: flex;
+    justify-content: end;
+    margin-right: 30px;
+    margin-top: 25px;
+}
+
+#button {
+    padding: 8px;
+    width: 80px;
+    border-radius: 10px;
+    background-color: rgb(87, 87, 109);
+    color: white;
+}
+
