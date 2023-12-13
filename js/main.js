@@ -61,6 +61,15 @@ function displayItemlist(event){
     let minus = document.createElement('button');
     minus.setAttribute('class', 'minus');
     minus.textContent = '-';
+    minus.addEventListener('click', (e)=>{
+        let cardadd = e.target.parentElement.children[1];
+        let price = (e.target.parentElement.parentElement.children[2].children[0].textContent).slice(0, -1);
+        if (parseInt(cardadd.textContent) > 1){
+            e.target.parentElement.children[1].textContent = parseInt(e.target.parentElement.children[1].textContent) - 1;
+            e.target.parentElement.parentElement.children[2].children[0].textContent = parseInt(price) - parseInt(cardData.children[2].children[1].children[0].textContent) + '$';
+        };
+        
+    });
 
     let qualitySpan = document.createElement('span');
     qualitySpan.textContent = '1';
@@ -70,9 +79,11 @@ function displayItemlist(event){
     plus.textContent = '+';
     plus.addEventListener('click', (e)=>{
         let cardadd = e.target.parentElement.children[1];
+        let price = (e.target.parentElement.parentElement.children[2].children[0].textContent).slice(0, -1);
         if (parseInt(cardadd.textContent) < parseInt(cardData.children[2].children[0].children[0].textContent)){
-            e.target.parentElement.children[1] = parseInt
-        }
+            e.target.parentElement.children[1].textContent = parseInt(e.target.parentElement.children[1].textContent) + 1;
+            e.target.parentElement.parentElement.children[2].children[0].textContent = parseInt(price) + parseInt(cardData.children[2].children[1].children[0].textContent) + '$';
+        };
         
     });
 
