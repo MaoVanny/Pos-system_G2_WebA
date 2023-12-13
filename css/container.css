@@ -149,18 +149,19 @@ p{
     padding: 5px 0px 0px 0px;
     background: rgba(27, 25, 25, 0.766);
     height: 250px;
-    display: grid;
-    grid-template-rows: 1.5fr 0.1fr 1fr;
-    gap: 5px;
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     border-radius: 5px;
 }
 .cardfooter {
     border-top: 1px solid rgb(255, 89, 89);
     width: 100%;
+    height: 90px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
     border-radius: 0px 0px 5px 5px;
 }
 .cardfooter>p {
@@ -178,14 +179,14 @@ p{
     color: white;
 }
 .card-product>h4 {
-    margin-top: 0px;
+    text-align: center;
     color: rgb(255, 255, 255);
 }
 .product-img {
     width: 100%;
-    height: 100%;
+    height: 120px;
     background-repeat: no-repeat;
-    background-size: 90px;
+    background-size: 80px;
     background-position: center;
 }
 
@@ -202,5 +203,9 @@ p{
     width: 100%;
     height: 100vh;
     background: white;
+    display: none;
+}
+
+.hide {
     display: none;
 }
