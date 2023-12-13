@@ -157,4 +157,19 @@ function displayCard (){
     }
 }
 
+
+// form for ADD new categories__________________
+let disPlayCategorise = document.querySelector('.disPlayCategorise');
+function displayProducts() {
+    let IsCartTrue = false;
+    if (span) {
+        IsCartTrue = true;
+        disPlayCategorise.style.display = 'block';
+    }
+}
+let span = document.querySelector('span');
+console.log(span)
+span.addEventListener('click', displayProducts);
+// ___________________________________________________________
+
 displayCard();
