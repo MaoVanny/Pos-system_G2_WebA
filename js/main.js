@@ -45,7 +45,7 @@ function saveData (){
     localStorage.setItem('data', JSON.stringify(myData));
     localStorage.setItem('add', JSON.stringify(addData));
 }
-// saveData();
+saveData();
 
 
 
