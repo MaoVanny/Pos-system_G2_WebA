@@ -24,21 +24,19 @@ let myData = [
     {
         categorie: 'food',
         product: [
-            { img: 'Image/bergure.jpg', name: 'bergure', stock: 40, price: 3 },
-            { img: 'Image/mokatak.jpg', name: 'mokatak', stock: 40, price: 1 },
+            { img: 'Image/bergure.jpg', name: 'bergure1', stock: 40, price: 3 },
+            { img: 'Image/mokatak.jpg', name: 'mokatak1', stock: 40, price: 1 },
             { img: 'Image/bergure.jpg', name: 'bergure', stock: 100, price: 10 },
             { img: 'Image/soryor.png', name: 'soryor', stock: 40, price: 1 },
             { img: 'Image/soryor.png', name: 'soryor', stock: 50, price: 0.99 },
             { img: 'Image/mokatak.jpg', name: 'mokatak', stock: 40, price: 3 },
-            { img: 'Image/pizza.jpg', name: 'Pizza', stock: 40, price: 5 },
             { img: 'Image/potato.jpg', name: 'DomLong', stock: 40, price: 8 },
-            { img: 'Image/pizza.jpg', name: 'Pizza', stock: 40, price: 1 },
             { img: 'Image/pizza.jpg', name: 'Pizza', stock: 40, price: 2 },
+            { img: 'Image/tam1-min.png', name: 'Tamp2', stock: 40, price: 9 },
             { img: 'Image/potato.jpg', name: 'potatos', stock: 40, price: 6 },
             { img: 'Image/tam1-min.png', name: 'Tamp', stock: 40, price: 7 },
-            { img: 'Image/potato.jpg', name: 'Potatos Fresh', stock: 40, price: 3 },
             { img: 'Image/checkend.jpg', name: 'Checkend', stock: 40, price: 4 },
-            { img: 'Image/tam1-min.png', name: 'Tamp', stock: 40, price: 5 },
+            { img: 'Image/tam1-min.png', name: 'Tamp1', stock: 40, price: 5 },
         ]
     },
     {
@@ -63,63 +61,41 @@ let myData = [
         ]
     },
 ];
-// data storage=========================================//
+
 function saveData() {
     localStorage.setItem('data', JSON.stringify(myData));
     localStorage.setItem('add', JSON.stringify(addData));
 }
-saveData();
+// saveData();
 
-// display card that you added======================================//
-function displayItemlist(event){
-    let cardData = event.target.parentElement.parentElement;
+
+function displayItemlist(data) {
+    // let cardData = event.target.parentElement.parentElement;
+
     let card = document.createElement('div');
     card.setAttribute('class', 'card-add');
-
     let productName = document.createElement('span');
-    productName.textContent = cardData.children[1].textContent;
-
+    productName.textContent = data.name;
     let quality = document.createElement('div');
     quality.setAttribute('class', 'qty');
-
     let minus = document.createElement('button');
     minus.setAttribute('class', 'minus');
     minus.textContent = '-';
-    minus.addEventListener('click', (e)=>{
-        let cardadd = e.target.parentElement.children[1];
-        let price = (e.target.parentElement.parentElement.children[2].children[0].textContent).slice(0, -1);
-        if (parseInt(cardadd.textContent) > 1){
-            e.target.parentElement.children[1].textContent = parseInt(e.target.parentElement.children[1].textContent) - 1;
-            e.target.parentElement.parentElement.children[2].children[0].textContent = parseInt(price) - parseInt(cardData.children[2].children[1].children[0].textContent) + '$';
-        };
-        
-    });
-
+    minus.addEventListener('click', DincreaseMoney);
     let qualitySpan = document.createElement('span');
     qualitySpan.textContent = '1';
-
     let plus = document.createElement('button');
     plus.setAttribute('class', 'plus');
     plus.textContent = '+';
-    plus.addEventListener('click', (e)=>{
-        let cardadd = e.target.parentElement.children[1];
-        let price = (e.target.parentElement.parentElement.children[2].children[0].textContent).slice(0, -1);
-        if (parseInt(cardadd.textContent) < parseInt(cardData.children[2].children[0].children[0].textContent)){
-            e.target.parentElement.children[1].textContent = parseInt(e.target.parentElement.children[1].textContent) + 1;
-            e.target.parentElement.parentElement.children[2].children[0].textContent = parseInt(price) + parseInt(cardData.children[2].children[1].children[0].textContent) + '$';
-        };
-        
-    });
+    plus.addEventListener('click', increaseMoney);
 
     let pPrice = document.createElement('p');
     pPrice.textContent = 'Price: ';
     let price = document.createElement('span');
-    price.textContent = cardData.children[2].children[1].children[0].textContent;
-
+    price.textContent = data.price;
     let icon = document.createElement('i');
     icon.setAttribute('class', 'bx bxs-trash');
-
-
+    icon.addEventListener('click', deleteCardList);
 
     groupAdd.appendChild(card);
     card.appendChild(productName);
@@ -130,7 +106,99 @@ function displayItemlist(event){
     card.appendChild(pPrice);
     pPrice.appendChild(price);
     card.appendChild(icon);
+}
 
+// payment=======================================
+    // increase money===============/
+
+function increaseMoney(e){
+    let name = e.target.parentElement.parentElement.children[0].textContent;
+    let productName = document.querySelectorAll('.card-product h4');
+    let productPrice = 0;
+    let stock = 0;
+    for (let nameProduct of productName){
+        if (nameProduct.textContent === name){
+            productPrice = ((nameProduct.parentElement.children[2].children[1].children[0].textContent).slice(0, -1));
+            stock = (nameProduct.parentElement.children[2].children[0].children[0].textContent);
+        }
+    }
+    
+
+    let cardadd = e.target.parentElement.children[1];
+    const price = (e.target.parentElement.parentElement.children[2].children[0].textContent).slice(0, -1);
+    if (parseInt(cardadd.textContent) < parseInt(stock)) {
+        e.target.parentElement.children[1].textContent = parseInt(e.target.parentElement.children[1].textContent) + 1;
+        e.target.parentElement.parentElement.children[2].children[0].textContent = parseInt(price) + parseInt(productPrice) +'$'; 
+    };
+}
+
+    // dincreaseMoney==========================///
+function DincreaseMoney(e){
+    let name = e.target.parentElement.parentElement.children[0].textContent;
+    let productName = document.querySelectorAll('.card-product h4');
+    let productPrice = 0;
+    for (let nameProduct of productName){
+        if (nameProduct.textContent === name){
+            productPrice = ((nameProduct.parentElement.children[2].children[1].children[0].textContent).slice(0, -1));
+        }
+    }
+    
+    let cardadd = e.target.parentElement.children[1];
+    const price = (e.target.parentElement.parentElement.children[2].children[0].textContent).slice(0, -1);
+    if (parseInt(cardadd.textContent) > 1) {
+        e.target.parentElement.children[1].textContent = parseInt(e.target.parentElement.children[1].textContent) - 1;
+        e.target.parentElement.parentElement.children[2].children[0].textContent = parseInt(price) - parseInt(productPrice) +'$'; 
+    };
+}
+
+
+
+function storeDataCardlist(event){
+    let data = JSON.parse(localStorage.getItem('add'));
+    let cardData = event.target.parentElement.parentElement;
+    let obj = {};
+    let isDuplicate = true;
+    for (let dt of data){
+        if (dt.name === cardData.children[1].textContent){
+            isDuplicate = false;
+        }
+    }
+
+    if (isDuplicate){
+        obj.name = cardData.children[1].textContent;
+        obj.price = cardData.children[2].children[1].children[0].textContent;
+        data.push(obj);
+        // data = [];
+        localStorage.setItem('add', JSON.stringify(data));
+    }
+    
+    
+    getDataStoragetoDp();
+}
+
+function getDataStoragetoDp(){
+    groupAdd.innerHTML = '';
+    let datas = JSON.parse(localStorage.getItem('add'));
+    for (let data of datas){
+        displayItemlist(data);
+    }
+}
+getDataStoragetoDp();
+
+function deleteCardList(e){
+    let productName = e.target.parentElement.children[0].textContent;
+    let datas = JSON.parse(localStorage.getItem('add'));
+    for (let i = 0; i < datas.length; i++){
+        if (productName === datas[i].name){
+            if (window.confirm('Do you want to delete your card?')){
+                datas.splice(i, 1);
+            }
+            
+        }
+        
+    }
+    localStorage.setItem('add', JSON.stringify(datas));
+    getDataStoragetoDp();
 }
 
 function creatCard(value) {
@@ -163,7 +231,7 @@ function creatCard(value) {
         let btn = document.createElement('button');
         btn.setAttribute('class', 'btn-add');
         btn.textContent = 'add';
-        btn.addEventListener('click', displayItemlist);
+        btn.addEventListener('click', storeDataCardlist);
 
 
         groupProduct.appendChild(cardProduct);
@@ -180,6 +248,8 @@ function creatCard(value) {
     }
 }
 
+
+// storeDataCardlist();
 
 function displayCard() {
     let cardData = JSON.parse(localStorage.getItem('data'));
@@ -218,6 +288,5 @@ categories[3].addEventListener('click', () => {
     creatCard(cardData[2]);
     let cardName = document.querySelectorAll('.card-product h4');
     search(cardName);
-
 
 })
