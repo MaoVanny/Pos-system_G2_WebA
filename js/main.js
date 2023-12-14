@@ -149,40 +149,4 @@ function displayCard (){
     }
 }
 
-
-//_______________________________________for loing to product selling_______________________
-let loginPasswords = [
-    { name: 'dara', pw: '123', cf: '123' }
-];
-
-let loginForm = document.querySelector('.login');
-let container1 = document.querySelector('.container1');
-container1.style.display = 'none';
-
-function loginToFromProduct() {
-    let inputName = document.querySelector('.name');
-    let inputPassword = document.querySelector('.password');
-    let inputConfirmPassword = document.querySelector('.comfirmPassword'); 
-    let isLoggedIn = false; 
-    for (let login of loginPasswords) {
-        if (inputName.value === login.name && inputPassword.value === login.pw && inputConfirmPassword.value === login.cf) {
-            isLoggedIn = true;
-        }
-    }
-
-    if (isLoggedIn) {
-        loginForm.style.display = 'none'; 
-        container1.style.display = 'block'; 
-    } else {
-        alert('Incorrct, Please try again!!');
-    }
-}
-
-let btn = document.querySelector('button');
-btn.addEventListener('click', loginToFromProduct);
-// ______________________________________________________________________________________
-
-
-
-
 displayCard();
