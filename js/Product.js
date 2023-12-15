@@ -140,4 +140,5 @@ function cancelCardproduct() {
 let buttons = document.querySelector('.btn1');
 buttons.addEventListener('click', cancelCardproduct)
 
-// 
+// ____________
+
