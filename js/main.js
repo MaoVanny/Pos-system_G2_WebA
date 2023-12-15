@@ -63,12 +63,17 @@ let myData = [
         ]
     },
 ];
+
+
 // data storage=========================================//
+
+// loginPasswords = [];
 function saveData() {
     localStorage.setItem('data', JSON.stringify(myData));
     localStorage.setItem('add', JSON.stringify(addData));
+    localStorage.setItem('pwd', JSON.stringify(loginPasswords));
 }
-saveData();
+// saveData();
 
 // display card that you added======================================//
 function displayItemlist(event){
