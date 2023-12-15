@@ -1,4 +1,3 @@
-
 function CardLogin() {
     let cardlogin = document.createElement('div');
     cardlogin.className = 'card-login';
@@ -45,7 +44,7 @@ function CardLogin() {
     loginForm.appendChild(cardlogin);
 
     button.addEventListener('click', function () {
-                loginToFromProduct()
+                storeDataLogin();
     });
 }
 
@@ -53,19 +52,26 @@ let loginForm = document.querySelector('.login');
 let container1 = document.querySelector('.container1');
 container1.style.display = 'none';
 
-let loginPasswords = [
-    { name: 'dara', pw: '123', cf: '123' }
-];
-
-function loginToFromProduct() {
+function storeDataLogin(){
     let inputName = document.querySelector('.name');
     let inputPassword = document.querySelector('.password');
     let inputConfirmPassword = document.querySelector('.confirmPassword');
+    let locData = JSON.parse(localStorage.getItem('pwd'));
+    let obj = {};
+    obj.name = inputName.value;
+    obj.pwd = inputPassword.value;
+    obj.cpwd = inputConfirmPassword.value;
+    locData.push(obj);
+    localStorage.setItem('pwd', JSON.stringify(locData));
+    loginToFromProduct();
+
+}
+
+function loginToFromProduct() {
+    let data = JSON.parse(localStorage.getItem('pwd'));
     let isLoggedIn = false;
-    for (let login of loginPasswords) {
-        if (inputName.value === login.name && inputPassword.value === login.pw && inputConfirmPassword.value === login.cf) {
-            isLoggedIn = true;
-        }
+    if (data.length != 0){
+        isLoggedIn = true;
     }
 
     if (isLoggedIn) {
@@ -73,7 +79,9 @@ function loginToFromProduct() {
         loginForm.style.display = 'none';
 
     } else {
-        alert('Incorrect, please try again!');
+        container1.style.display = 'none'
+        
     }
 }
 CardLogin();
+loginToFromProduct();
