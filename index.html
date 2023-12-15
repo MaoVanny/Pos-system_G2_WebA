@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,15 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/container.css">
+    <link rel="stylesheet" href="css/payment.css">
 </head>
+
 <body>
     <header>
         <nav>
             <div class="sidebar-left">
                 <div class="box1">
-                    <i class='bx bx-store' ></i>
+                    <i class='bx bx-store'></i>
                     <span>Product</span>
                     <i class='bx bx-plus'></i>
                 </div>
@@ -23,7 +26,7 @@
                     <i class='bx bx-plus'></i>
                 </div>
                 <div class="box3">
-                    <i class='bx bxs-cart-alt' ></i>
+                    <i class='bx bxs-cart-alt'></i>
                     <span>Opan Tabs</span>
                 </div>
                 <div class="box4">
@@ -76,8 +79,8 @@
             <div class="total-pay">
                 <div class="total-product">
                     <p>Total Item : <span>2</span></p>
-                    <p>Total Price  : <span>10$</span></p>
-                    <p>Discount  : <span>10%</span></p>
+                    <p>Total Price : <span>10$</span></p>
+                    <p>Discount : <span>10%</span></p>
                 </div>
                 <div class="group-btn-pay">
                     <div class="cancel">
@@ -94,12 +97,45 @@
     </div>
 
     <div class="history">
-        
     </div>
 
+    <div class="paymentCard">
+        <div class="logo">
+            <img src="../Image/download.png" alt="" width="30" height="30" id="logo">
+            <h2>pnc market</h2>
+        </div>
+        <h3>Payment</h3>
+
+        <div class="sub-card">
+            <div class="img-left">
+                <p>card</p>
+            </div>
+            <div class="img-right">
+                <img src="../Image/pay.png" alt="" width="40" height="40" id="pay">
+                <img src="../Image/master.png" alt="" width="40" height="40" id="master">
+                <img src="../Image/visa.png" alt="" width="40" height="40" id="visa">
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="input">
+                <input type="text" placeholder="name">
+                <input type="text" placeholder="phone number">
+                <input type="text" placeholder="mm/dd/yyyy">
+                <input type="text" placeholder="amount">
+            </div>
+            <div class="button">
+                <button class="button1">Cancel</button>
+                <button class="button2">Pay</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/pay.js"></script>
     <script src="./js/main.js"></script>
     <!-- <script src="./js/history.js"></script> -->
     <script src="./js/search.js"></script>
-    
+
 </body>
+
 </html>
