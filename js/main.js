@@ -85,8 +85,6 @@ function displayItemlist(event){
     let icon = document.createElement('i');
     icon.setAttribute('class', 'bx bxs-trash');
 
-
-
     groupAdd.appendChild(card);
     card.appendChild(productName);
     card.appendChild(quality);
@@ -96,10 +94,6 @@ function displayItemlist(event){
     card.appendChild(pPrice);
     pPrice.appendChild(price);
     card.appendChild(icon);
-
-    
-
-
 
 }
 
@@ -157,19 +151,4 @@ function displayCard (){
     }
 }
 
-
-// form for ADD new categories__________________
-let disPlayCategorise = document.querySelector('.disPlayCategorise');
-function displayProducts() {
-    let IsCartTrue = false;
-    if (span) {
-        IsCartTrue = true;
-        disPlayCategorise.style.display = 'block';
-    }
-}
-let span = document.querySelector('span');
-console.log(span)
-span.addEventListener('click', displayProducts);
-// ___________________________________________________________
-
-displayCard();
+displayCard ()
