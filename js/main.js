@@ -76,11 +76,11 @@ function saveData() {
 // saveData();
 
 // display card that you added======================================//
-function displayItemlist(event){
+function displayItemlist(event) {
     let cardData = event.target.parentElement.parentElement;
     let card = document.createElement('div');
     card.setAttribute('class', 'card-add');
-
+    
     let productName = document.createElement('span');
     productName.textContent = cardData.children[1].textContent;
 
@@ -90,14 +90,14 @@ function displayItemlist(event){
     let minus = document.createElement('button');
     minus.setAttribute('class', 'minus');
     minus.textContent = '-';
-    minus.addEventListener('click', (e)=>{
+    minus.addEventListener('click', (e) => {
         let cardadd = e.target.parentElement.children[1];
         let price = (e.target.parentElement.parentElement.children[2].children[0].textContent).slice(0, -1);
-        if (parseInt(cardadd.textContent) > 1){
+        if (parseInt(cardadd.textContent) > 1) {
             e.target.parentElement.children[1].textContent = parseInt(e.target.parentElement.children[1].textContent) - 1;
             e.target.parentElement.parentElement.children[2].children[0].textContent = parseInt(price) - parseInt(cardData.children[2].children[1].children[0].textContent) + '$';
         };
-        
+
     });
 
     let qualitySpan = document.createElement('span');
@@ -106,14 +106,14 @@ function displayItemlist(event){
     let plus = document.createElement('button');
     plus.setAttribute('class', 'plus');
     plus.textContent = '+';
-    plus.addEventListener('click', (e)=>{
+    plus.addEventListener('click', (e) => {
         let cardadd = e.target.parentElement.children[1];
         let price = (e.target.parentElement.parentElement.children[2].children[0].textContent).slice(0, -1);
-        if (parseInt(cardadd.textContent) < parseInt(cardData.children[2].children[0].children[0].textContent)){
+        if (parseInt(cardadd.textContent) < parseInt(cardData.children[2].children[0].children[0].textContent)) {
             e.target.parentElement.children[1].textContent = parseInt(e.target.parentElement.children[1].textContent) + 1;
             e.target.parentElement.parentElement.children[2].children[0].textContent = parseInt(price) + parseInt(cardData.children[2].children[1].children[0].textContent) + '$';
         };
-        
+
     });
 
     let pPrice = document.createElement('p');
@@ -123,7 +123,6 @@ function displayItemlist(event){
 
     let icon = document.createElement('i');
     icon.setAttribute('class', 'bx bxs-trash');
-
 
 
     groupAdd.appendChild(card);
@@ -154,7 +153,7 @@ function creatCard(value) {
 
         let cardFooter = document.createElement('div');
         cardFooter.setAttribute('class', 'cardfooter');
-
+        
         let stock = document.createElement('p');
         stock.textContent = 'Stock: ';
         let numberofStock = document.createElement('span');
