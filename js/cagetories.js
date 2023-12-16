@@ -83,12 +83,11 @@ function blockCategories() {
 }
 
 let box2Span = document.querySelector('.box2');
-let span = box2Span.querySelector('span')
+let span = box2Span.querySelector('.bx-plus');
 span.addEventListener('click', blockCategories);
 cateoriesCard()
 
-
-//  functon cancel
+// _________________function cancel___________
 function Cancle() {
     if (buttonCancel) {
         categoriesCard.style.display = 'none';
