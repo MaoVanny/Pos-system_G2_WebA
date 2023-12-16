@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +7,9 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/container.css">
-    <link rel="stylesheet" href="pages/login.html">
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="./pages/login.html">
+    <link rel="stylesheet" href="./css/categories.css">
+    <link rel="stylesheet" href="./css/login.css">
 </head>
-
 <body>
     <div class="container1">
         <header>
@@ -101,10 +98,31 @@
     </div>
     <div class="login">
     </div>
-    <script src="./js/main.js"></script>
-    <script src="./js/loginform.js"></script>
-    <script src="./js/search.js"></script>
-    <script src="./js/search-inOrder.js"></script>
-</body>
+    <div class="categoriesCard">
+        <div class="cardcategories">
+            <h3>Add New Categories</h3>
+            <div class="inputcategories">
+                <input type="text" id="name", class="name", placeholder="Name of cagetories">
+            </div>
+            <div class="list-inputcategories">
+                <div id="groupCategorie">
 
+                </div>
+                <div class="imgPic">
+                    <img src="./Image/shopping.png" alt="">
+                </div>
+            </div>
+            <div class="fromSubnits">
+                <button id="btn1", class="btn1">Cancle</button>
+                <button id="btn2", class="btn2">Create</button>
+            </div>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+    <script src="./js/search.js"></script>
+    <script src="./js/cancel.js"></script>
+    <script src="./js/loginform.js"></script>
+    <script src="./js/cagetories.js"></script>
+    
+</body>
 </html>

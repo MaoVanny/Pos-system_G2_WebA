@@ -43,6 +43,7 @@ nav {
     align-items: center;
     margin-left: 5px;
     border-radius: 5px;
+    cursor: pointer;
 }
 .box1, .box2, .box6{
     justify-content: space-between;
