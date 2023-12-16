@@ -7,39 +7,39 @@ let myData = [
     {
         categorie: 'drink',
         product: [
-            {img: 'Image/baya.png', name: 'baya', stock: 40, price: 1},
-            {img: 'Image/baya.png', name: 'baya', stock: 40, price: 1},
-            {img: 'Image/chost.png', name: 'chost', stock: 100, price: 1},
-            {img: 'Image/chost2.png', name: 'chost2', stock: 40, price: 1},
-            {img: 'Image/redbull.png', name: 'redbull', stock: 50, price: 1},
-            {img: 'Image/rockstar.png', name: 'rockstar', stock: 40, price: 1},
+            { img: 'Image/baya.png', name: 'baya', stock: 40, price: 1 },
+            { img: 'Image/baya.png', name: 'baya', stock: 40, price: 1 },
+            { img: 'Image/chost.png', name: 'chost', stock: 100, price: 1 },
+            { img: 'Image/chost2.png', name: 'chost2', stock: 40, price: 1 },
+            { img: 'Image/redbull.png', name: 'redbull', stock: 50, price: 1 },
+            { img: 'Image/rockstar.png', name: 'rockstar', stock: 40, price: 1 },
         ]
     },
     {
         categorie: 'food',
         product: [
-            {img: 'Image/baya.png', name: 'baya', stock: 40, price: 1},
-            {img: 'Image/baya.png', name: 'baya', stock: 40, price: 1},
-            {img: 'Image/chost.png', name: 'chost', stock: 100, price: 1},
-            {img: 'Image/chost2.png', name: 'chost2', stock: 40, price: 1},
-            {img: 'Image/redbull.png', name: 'redbull', stock: 50, price: 1},
-            {img: 'Image/rockstar.png', name: 'rockstar', stock: 40, price: 1},
+            { img: 'Image/baya.png', name: 'baya', stock: 40, price: 1 },
+            { img: 'Image/baya.png', name: 'baya', stock: 40, price: 1 },
+            { img: 'Image/chost.png', name: 'chost', stock: 100, price: 1 },
+            { img: 'Image/chost2.png', name: 'chost2', stock: 40, price: 1 },
+            { img: 'Image/redbull.png', name: 'redbull', stock: 50, price: 1 },
+            { img: 'Image/rockstar.png', name: 'rockstar', stock: 40, price: 1 },
         ]
     },
     {
         categorie: 'fruit',
         product: [
-            {img: 'Image/baya.png', name: 'baya', stock: 40, price: 1},
-            {img: 'Image/baya.png', name: 'baya', stock: 40, price: 1},
-            {img: 'Image/chost.png', name: 'chost', stock: 100, price: 1},
-            {img: 'Image/chost2.png', name: 'chost2', stock: 40, price: 1},
-            {img: 'Image/redbull.png', name: 'redbull', stock: 50, price: 1},
-            {img: 'Image/rockstar.png', name: 'rockstar', stock: 40, price: 1},
+            { img: 'Image/baya.png', name: 'baya', stock: 40, price: 1 },
+            { img: 'Image/baya.png', name: 'baya', stock: 40, price: 1 },
+            { img: 'Image/chost.png', name: 'chost', stock: 100, price: 1 },
+            { img: 'Image/chost2.png', name: 'chost2', stock: 40, price: 1 },
+            { img: 'Image/redbull.png', name: 'redbull', stock: 50, price: 1 },
+            { img: 'Image/rockstar.png', name: 'rockstar', stock: 40, price: 1 },
         ]
     },
 ];
 
-function saveData (){
+function saveData() {
     localStorage.setItem('data', JSON.stringify(myData));
     localStorage.setItem('add', JSON.stringify(addData));
 }
@@ -47,7 +47,7 @@ function saveData (){
 
 
 
-function displayItemlist(event){
+function displayItemlist(event) {
     let cardData = event.target.parentElement.parentElement;
     let card = document.createElement('div');
     card.setAttribute('class', 'card-add');
@@ -68,12 +68,12 @@ function displayItemlist(event){
     let plus = document.createElement('button');
     plus.setAttribute('class', 'plus');
     plus.textContent = '+';
-    plus.addEventListener('click', (e)=>{
+    plus.addEventListener('click', (e) => {
         let cardadd = e.target.parentElement.children[1];
-        if (parseInt(cardadd.textContent) < parseInt(cardData.children[2].children[0].children[0].textContent)){
+        if (parseInt(cardadd.textContent) < parseInt(cardData.children[2].children[0].children[0].textContent)) {
             e.target.parentElement.children[1] = parseInt
         }
-        
+
     });
 
 
@@ -97,19 +97,15 @@ function displayItemlist(event){
     pPrice.appendChild(price);
     card.appendChild(icon);
 
-    
-
-
-
 }
 
-function creatCard(value){
+function creatCard(value) {
     let datas = value.product;
-    for (let data of datas){
-        let img = 'url' + '('+ ('../' + data.img) + ')';
+    for (let data of datas) {
+        let img = 'url' + '(' + ('../' + data.img) + ')';
         let cardProduct = document.createElement('div');
         cardProduct.setAttribute('class', 'card-product');
-
+  
         let imgProduct = document.createElement('div');
         imgProduct.setAttribute('class', 'product-img');
         imgProduct.style.backgroundImage = String(img);
@@ -150,26 +146,12 @@ function creatCard(value){
     }
 }
 
-function displayCard (){
+function displayCard() {
     let cardData = JSON.parse(localStorage.getItem('data'));
-    for (let card of cardData){
+    for (let card of cardData) {
         creatCard(card);
     }
 }
 
-
-// form for ADD new categories__________________
-let disPlayCategorise = document.querySelector('.disPlayCategorise');
-function displayProducts() {
-    let IsCartTrue = false;
-    if (span) {
-        IsCartTrue = true;
-        disPlayCategorise.style.display = 'block';
-    }
-}
-let span = document.querySelector('span');
-console.log(span)
-span.addEventListener('click', displayProducts);
-// ___________________________________________________________
 
 displayCard();
