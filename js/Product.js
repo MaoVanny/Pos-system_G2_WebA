@@ -50,19 +50,19 @@ function cartsProduct() {
     select.id = 'options';
 
     let optionQuestion = document.createElement('option');
-    optionQuestion.value = ' ';
+    optionQuestion.value = 'what?';
     optionQuestion.textContent = 'What kind of category?';
 
     let optionFruit = document.createElement('option');
-    optionFruit.value = 'Fruits';
+    optionFruit.value = 'fruit';
     optionFruit.textContent = 'Fruits';
 
     let optionDrinks = document.createElement('option');
-    optionDrinks.value = 'Drinks';
+    optionDrinks.value = 'drink';
     optionDrinks.textContent = 'Drinks';
 
     let optionFood = document.createElement('option');
-    optionFood.value = 'Foods';
+    optionFood.value = 'food';
     optionFood.textContent = 'Foods';
 
     let inputProductnameOptionsImages = document.createElement('div');
@@ -114,8 +114,10 @@ function cartsProduct() {
     CartCategorise.appendChild(buttons);
     disPlayCategorise.appendChild(CartCategorise);
 }
-cartsProduct()
-//  hiden product card_____________________
+
+cartsProduct();
+
+//  hiden product card
 let disPlayCategorise = document.querySelector('.disPlayCategorise');
 disPlayCategorise.style.display = 'none';
 
@@ -128,85 +130,15 @@ function displayProducts() {
 let span = document.querySelector('.bx-plus');
 span.addEventListener('click', displayProducts);
 
-//  form cancel ________________
+//  for cancel for
 function cancelCardproduct() {
     if (buttons) {
         disPlayCategorise.style.display = 'none';
-    } 
+    }
 }
 
 let buttons = document.querySelector('.btn1');
 buttons.addEventListener('click', cancelCardproduct)
 
-
-// add card to product_________________________________
-
-let groupProducts = document.querySelector('.product-content');
-function productAddToCart() {
-    let inputProductName = document.querySelector('.nameproduct').value;
-    let inputStock = document.querySelector('.stock').value;
-    let inputPrice = document.querySelector('.price').value;
-    let select = document.querySelector('select');
-    let selectedOption = select.value;
-
-    let product = {
-        name: inputProductName,
-        stock: inputStock,
-        price: inputPrice,
-        selectedOption: selectedOption
-    };
-
-    let cartItems = JSON.parse(localStorage.getItem('cart'));
-    // cartItems.push(product);
-    localStorage.setItem('cart', JSON.stringify(cartItems));
-
-    createCard(product);
-    console.log(cartItems);
-}
-
-
-// create cardProdect in card-product__________________________
-function createCard(item) {
-    let cardProduct = document.createElement('div');
-    cardProduct.setAttribute('class', 'card-product');
-
-    let productName = document.createElement('h4');
-    productName.textContent = item.name;
-
-    let cardFooter = document.createElement('div');
-    cardFooter.setAttribute('class', 'cardfooter');
-
-    let stock = document.createElement('p');
-    stock.textContent = 'Stock: ';
-    let numberofStock = document.createElement('span');
-    numberofStock.textContent = item.stock;
-
-    let price = document.createElement('p');
-    price.textContent = 'Price: ';
-    let numberofPrice = document.createElement('span');
-    numberofPrice.textContent = item.price + '$';
-
-    let btn = document.createElement('button');
-    btn.setAttribute('class', 'btn-add');
-    btn.textContent = 'add';
-
-    cardProduct.appendChild(productName);
-    cardProduct.appendChild(cardFooter);
-    cardFooter.appendChild(stock);
-    stock.appendChild(numberofStock);
-    cardFooter.appendChild(price);
-    price.appendChild(numberofPrice);
-    cardFooter.appendChild(btn);
-
-    groupProducts.appendChild(cardProduct);
-}
-
-let btnAdd = document.querySelector('.btn2');
-console.log(btnAdd)
-btnAdd.addEventListener('click', ()=>{
-    productAddToCart()
-    disPlayCategorise.style.display = 'none';
-});
-
-
+// ____________
 

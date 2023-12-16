@@ -85,8 +85,6 @@ function displayItemlist(event) {
     let icon = document.createElement('i');
     icon.setAttribute('class', 'bx bxs-trash');
 
-
-
     groupAdd.appendChild(card);
     card.appendChild(productName);
     card.appendChild(quality);
@@ -153,5 +151,4 @@ function displayCard() {
     }
 }
 
-
-displayCard();
+displayCard ()
