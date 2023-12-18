@@ -43,6 +43,7 @@ nav {
     align-items: center;
     margin-left: 5px;
     border-radius: 5px;
+    cursor: pointer;
 }
 .box1, .box2, .box6{
     justify-content: space-between;
@@ -101,3 +102,111 @@ a {
    grid-template-rows: 1fr;
    text-decoration: none;
 }
+
+
+/* ____________________Form Product_________________ */
+.disPlayCategorise {
+    position: fixed;
+    top: 48%;
+    left: 50%;
+    width: 490px;
+    height: 490px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    background-color: rgb(0, 0, 0);
+    border: rgb(161, 38, 0) solid 5px;
+    border-radius: 20px;
+}
+.CartCategorise {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+
+/* .disPlayCategorise:hover{
+   
+} */
+.CartCategorise h2 {
+    color: antiquewhite;
+    margin: 30px;
+    /* margin-top: 10px; */
+
+}
+
+#nameproduct {
+    margin-left: 45px;
+}
+
+#price {
+    margin-left: 60px;
+}
+
+
+
+
+.CartCategorise input[type='number'], .CartCategorise input[type='text'] {
+    display: flex;
+    width: 65%;
+    /* height: 20%; */
+    padding: 10px;
+    margin-left: 55px;
+    border-radius: 20px;
+    background-color: rgba(240, 234, 234, 0.951);
+    margin-right: 20px;
+}
+
+.inputProductname {
+    display: flex;
+    margin-left: 20px;
+}
+
+.inputProductname h4 {
+    color: aliceblue;
+    margin-top: 22px;
+}
+
+#pic {
+    margin-top: 15px;
+    color: aliceblue;
+}
+
+.inputProductname {
+    margin-top: 20px;
+}
+
+input[type='file'] {
+    width: 60%;
+    margin-left: 20px;
+    /* padding: ; */
+}
+
+select {
+    margin-left: 25px;
+    color: rgb(102, 102, 128);
+    width: 70%;
+    background-color: rgba(240, 234, 234, 0.951);
+    border-radius: 15px;
+}
+
+.fromSubnits1 {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+
+}
+
+.btn1FormAddProduct,
+.btn2FormAddProduct {
+    width: 20%;
+    padding: 10px;
+    background-color: rgb(227, 61, 19);
+    font-weight: bold;
+    color: aliceblue;
+    border-radius: 10px;
+    border: palevioletred solid 2px;
+}
+
+/* ____________________________end_________________________________ */
