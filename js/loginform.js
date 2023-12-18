@@ -1,3 +1,4 @@
+
 function CardLogin() {
     let cardlogin = document.createElement('div');
     cardlogin.className = 'card-login';
@@ -16,13 +17,13 @@ function CardLogin() {
     inputName.placeholder = 'Enter Your Name';
 
     let inputPassword = document.createElement('input');
-    inputPassword.type = 'text';
+    inputPassword.type = 'password';
     inputPassword.className = 'password';
     inputPassword.id = 'password';
     inputPassword.placeholder = 'Password';
 
     let inputConfirm = document.createElement('input');
-    inputConfirm.type = 'text';
+    inputConfirm.type = 'password';
     inputConfirm.className = 'confirmPassword';
     inputConfirm.id = 'confirmPassword';
     inputConfirm.placeholder = 'Confirm Password';
@@ -44,44 +45,58 @@ function CardLogin() {
     loginForm.appendChild(cardlogin);
 
     button.addEventListener('click', function () {
-                storeDataLogin();
+        addValueOfForm();
     });
 }
 
 let loginForm = document.querySelector('.login');
 let container1 = document.querySelector('.container1');
-container1.style.display = 'none';
 
-function storeDataLogin(){
+
+
+function addValueOfForm() {
+    let data = JSON.parse(localStorage.getItem('formvalue'));
     let inputName = document.querySelector('.name');
     let inputPassword = document.querySelector('.password');
     let inputConfirmPassword = document.querySelector('.confirmPassword');
-    let locData = JSON.parse(localStorage.getItem('pwd'));
-    let obj = {};
-    obj.name = inputName.value;
-    obj.pwd = inputPassword.value;
-    obj.cpwd = inputConfirmPassword.value;
-    locData.push(obj);
-    localStorage.setItem('pwd', JSON.stringify(locData));
+    if (parseInt(inputPassword.value) === parseInt(inputConfirmPassword.value)) {
+        data.push(inputPassword.value);
+        data.push(inputConfirmPassword.value);
+        data.push(inputName.value);
+    } else {
+        alert('Incorrect, please try again!');
+    }
+    inputName.value = '';
+    inputPassword.value = '';
+    inputConfirmPassword.value = '';
+    localStorage.setItem('formvalue', JSON.stringify(data));
     loginToFromProduct();
-
 }
 
 function loginToFromProduct() {
-    let data = JSON.parse(localStorage.getItem('pwd'));
-    let isLoggedIn = false;
-    if (data.length != 0){
-        isLoggedIn = true;
-    }
 
-    if (isLoggedIn) {
+    let valueOfinput = JSON.parse(localStorage.getItem('formvalue'));
+    if (valueOfinput.length != 0) {
         container1.style.display = 'block';
-        loginForm.style.display = 'none';
-
-    } else {
-        container1.style.display = 'none'
-        
+        loginForm.setAttribute('class', 'hide');
     }
 }
-CardLogin();
+
+
+// closest application---------------------------
+let closeBtn = document.querySelector('.bx-power-off');
+closeBtn.addEventListener('click', () => {
+    if (window.confirm('Do you want to left you account?')) {
+        let data = JSON.parse(localStorage.getItem('formvalue'));
+        data = [];
+        container1.style.display = 'none';
+        loginForm.setAttribute('class', 'login');
+        localStorage.setItem('formvalue', JSON.stringify(data));
+    }
+
+})
+
 loginToFromProduct();
+
+CardLogin();
+

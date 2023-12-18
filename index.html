@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +7,10 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/container.css">
-    <link rel="stylesheet" href="pages/login.html">
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="./pages/login.html">
+    <link rel="stylesheet" href="./css/categories.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/payment.css">
 </head>
-
 <body>
     <div class="container1">
         <header>
@@ -99,19 +97,112 @@
             </div>
         </div>
     </div>
-
     <div class="login">
     </div>
+    <div class="categoriesCard">
+        <div class="cardcategories">
+            <h3>Add New Categories</h3>
+            <div class="inputcategories">
+                <input type="text" id="name", class="name", placeholder="Name of cagetories">
+            </div>
+            <div class="list-inputcategories">
+                <div id="groupCategorie">
 
-    <div class="disPlayCategorise">
+                </div>
+                <div class="imgPic">
+                    <img src="./Image/shopping.png" alt="">
+                </div>
+            </div>
+            <div class="fromSubnits">
+                <button id="btn1", class="btn1">Cancle</button>
+                <button id="btn2", class="btn2">Create</button>
+            </div>
+        </div>
     </div>
 
+    <div class="paymentCard" style="display: none;">
+        <div class="logo">
+            <img src="./Image/download.png" alt="" width="30" height="30" id="logo">
+            <h2>pnc market</h2>
+        </div>
+        <h3>Payment</h3>
+        <div class="sub-card">
+            <p>card</p>
+        </div>
+        <div class="img-right">
+            <img src="./Image/pay.png" alt="" width="40" height="40" id="pay">
+            <img src="./Image/master.png" alt="" width="40" height="40" id="master">
+            <img src="./Image/visa.png" alt="" width="40" height="40" id="visa">
+        </div>
+        <div class="card">
+            <div class="input">
+                <input type="text" placeholder="name">
+                <input type="number" placeholder="phone number">
+                <input type="date" placeholder="mm/dd/yyyy">
+                <input type="amount" placeholder="amount">
+            </div>
+            <div class="button">
+                <button class="button1">Cancel</button>
+                <button class="button2">Pay</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="disPlayCategorise" style="display: none;">
+        <div class="CartCategorise">
+            <h2>Add new Products</h2>
+            <div class="inputProductname">
+                <h4>Product :</h4>
+                <input type="text" class="nameproduct" id="nameproduct" value="" placeholder="Name of Products">
+            </div>
+            <div class="inputProductname">
+                <h4>Stocks :</h4>
+                <input type="number" class="stock" id="stock" value="" placeholder="Number of stocks">
+            </div>
+            <div class="inputProductname">
+                <h4>Prices :</h4>
+                <input type="number" class="price" id="price" value="" placeholder="Prices">
+            </div>
+            <div class="inputProductname">
+                <h4>Categories :</h4>
+                <select name="option" id="options">
+                    <option value="what?">What kind of your categories?</option>
+                </select>
+            </div>
+            <div class="inputProductname">
+                <h4>Product Images :</h4>
+                <input type="file" class="pic" id="pic" value="">
+            </div>
+           
+            
+        </div>
+        <div class="fromSubnits1">
+            <button class="btn1FormAddProduct">Cancle</button>
+            <button class="btn2FormAddProduct">Create</button>
+        </div>
+    </div>
+
+    <div class="showProductDetail">
+        <h2>Show Detail</h2>
+        <div class="info">
+            <p>Product Name : <span></span></p>
+            <p>Product Stock : <span></span></p>
+            <p>Product Price : <span></span></p>
+            <p>Categorie : <span></span></p>
+        </div>
+        <div class="info-footer">
+            <button class="show-cencel">OK</button>
+        </div>
+    </div>
+
+
     <script src="./js/main.js"></script>
-    <script src="./js/product.js"></script>
-    <script src="./js/loginform.js"></script>
     <script src="./js/search.js"></script>
-    <script src="./js/search-inOrder.js"></script>
-
+    <script src="./js/cancel.js"></script>
+    <script src="./js/loginform.js"></script>
+    <script src="./js/cagetories.js"></script>
+    <script src="./js/pay.js"></script>
+    <script src="./js/product.js"></script>
+    
 </body>
-
 </html>
