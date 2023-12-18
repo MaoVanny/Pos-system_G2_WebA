@@ -1,0 +1,291 @@
+body {
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    margin: 0px;
+}
+
+header {
+    width: 25%;
+    background-color: black;
+    border-right: 2px solid white;
+    display: flex;
+    flex: 1;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.sidebar-right,
+.sidebar-left {
+    width: 50%;
+    margin-left: -93px;
+}
+
+.box3 span,
+.box4 span,
+.box5 span {
+    margin-left: 20%;
+}
+
+.box1,
+.box2,
+.box3,
+.box4,
+.box5,
+.box6,
+.box7 {
+    display: flex;
+    background: rgb(228, 31, 70);
+    height: 50px;
+    color: white;
+    align-items: center;
+    border-radius: 5px;
+    margin-top: 20px;
+    width: 150%;
+}
+
+.box1 span,
+.box2 span,
+.box3 span,
+.box4 span,
+.box5 span,
+.box6 span,
+.box7 span {
+    font-size: 15px;
+    font-weight: bold;
+    /* color: black; */
+}
+
+.box7 span {
+    margin-left: 30%;
+}
+
+.box1,
+.box2,
+.box6 {
+    justify-content: space-between;
+}
+
+.box3,
+.box4 {
+    background: rgb(227, 61, 19);
+}
+
+.box7 {
+    background: rgb(215, 215, 215);
+    color: black;
+}
+
+.box1>i:nth-child(1),
+.box2>i:nth-child(1),
+.box3>i:nth-child(1),
+.box4>i:nth-child(1),
+.box5>i:nth-child(1),
+.box6>i:nth-child(1),
+.box7>i:nth-child(1) {
+    width: 30px;
+    height: 100%;
+    background: rgb(86, 82, 82);
+    margin: 0;
+    border-radius: 4px 0px 0px 4px;
+
+}
+
+.box3>i:nth-child(1),
+.box4>i:nth-child(1) {
+    background: rgb(161, 38, 0);
+}
+
+.box1>i:nth-child(3),
+.box2>i:nth-child(3),
+.box6>i:nth-child(3) {
+    width: 30px;
+    height: 100%;
+    background: rgb(66, 66, 66);
+    margin: 0;
+    border-radius: 0;
+    border-radius: 0px 4px 4px 0px;
+}
+
+.box7>i:nth-child(1),
+.box6>i:nth-child(3) {
+    background: rgb(182, 182, 182);
+    color: black;
+}
+
+.bx {
+    margin-left: 5px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background: rgba(131, 126, 126, 0.792);
+    margin-top: 10px;
+    width: 50%;
+}
+
+#bx {
+    padding: 10px;
+}
+
+span {
+    margin: 0px 10px;
+    font-size: 13px;
+}
+
+.sidebar-right>i:nth-child(5) {
+    background: red;
+    margin-top: 15px;
+}
+
+a {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    text-decoration: none;
+}
+
+.icons {
+    display: flex;
+}
+
+.icons .bx {
+    background-color: rgb(227, 220, 220);
+    color: black;
+    width: 30px;
+
+}
+
+.bx-edit,
+.bx-trash {
+    margin-left: 20%;
+}
+
+/* ____________________ end header ____________________*/
+
+.container-form {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(227, 220, 220);
+  flex: 3;
+
+}
+
+.header {
+    display: flex;
+    padding: 10px;
+    background-color: black;
+    border-bottom: rgb(161, 38, 0) solid 3px;
+    height: 22vh;
+}
+
+.header h2 {
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.searchproduct {
+    margin-top: 15px;
+    margin-left: 440px;
+    margin-right: 10px;
+    width: 70%;
+}
+
+.searchproduct input[type='search'] {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 98%;
+    margin: 10px;
+}
+
+th,
+td {
+    border: solid 1px black;
+    padding: 10px;
+}
+
+thead {
+    background-color:black;
+    color: white;
+}
+
+
+/* _________________StocksProduct___________ */
+
+.StocksProduct {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.displayform {
+    background-color: gainsboro;
+    width: 20%;
+    text-align: center;
+    margin-top: -5%;
+    margin-bottom: 4%;
+    border-radius: 10px;
+    color: black;
+    border: 3px solid rgb(161, 38, 0);
+    box-shadow: -3px 5px 87px -33px rgba(0, 0, 0, 0.83);
+    -webkit-box-shadow: -3px 5px 87px -33px rgba(0, 0, 0, 0.83);
+    -moz-box-shadow: -3px 5px 87px -33px rgba(0, 0, 0, 0.83);
+}
+
+.displayform:hover {
+    background-color: rgb(202, 40, 40);
+    color: white;
+    border: 3px solid #dcdcdc;
+    cursor: pointer;
+}
+.btn{
+    display: flex;
+    flex-direction: row;
+    margin-top: -25px;
+    justify-content: space-between;
+    /* color: aliceblue; */
+}
+
+.content h3{
+    margin-left: 10px;
+    font-size: 20px;
+}
+.buttons {
+    width: 50%;
+    margin-right: -260px;
+}
+.btn1{
+    background-color: rgb(161, 38, 0);
+    color: white;
+}
+.btn2{
+    background-color: rgb(212, 45, 23);
+    color: white;
+}
+ button {
+    width: 20%;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-right: 10px;
+
+}

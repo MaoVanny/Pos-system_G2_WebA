@@ -1,55 +1,99 @@
 function cateoriesCard() {
-    let localData = JSON.parse(localStorage.getItem('data'));
+    let cardcategories = document.createElement("div");
+    cardcategories.className = 'cardcategories';
 
-    let groupCategories = document.querySelector('#groupCategorie');
-    groupCategories.innerHTML = '';
-    let createCategories = document.querySelector('.btn2');
-    for (let i = 0; i<localData.length; i++){
-        let inputDrink = document.createElement('span');
-        inputDrink.textContent = localData[i].categorie;
-        inputDrink.className = 'categorie';
-        groupCategories.appendChild(inputDrink);
-    }
-    createCategories.addEventListener('click', addCategories)
+    let h3 = document.createElement('h3');
+    h3.textContent = 'Add New Categories';
 
+    let inputcategories = document.createElement('div');
+    inputcategories.className = "inputcategories";
+
+    let inputName = document.createElement('input');
+    inputName.type = 'text';
+    inputName.id = "name";
+    inputName.className = 'name';
+    inputName.placeholder = 'Name of Categories';
+
+    let list_inputcategories = document.createElement('div');
+    list_inputcategories.className = "list-inputcategories";
+
+    let inputDrink = document.createElement('input');
+    inputDrink.type = 'text';
+    inputDrink.id = "drinks";
+    inputDrink.className = 'drinks';
+    inputDrink.placeholder = 'Drinks';
+
+    let inputFood = document.createElement('input');
+    inputFood.type = 'text';
+    inputFood.id = "food";
+    inputFood.className = 'food';
+    inputFood.placeholder = 'Foods';
+
+    let inputFruits = document.createElement('input');
+    inputFruits.type = 'text';
+    inputFruits.id = "fruit";
+    inputFruits.className = 'fruit';
+    inputFruits.placeholder = 'Fruits';
+
+    let imgPic = document.createElement('div');
+    imgPic.className = 'imgPic';
+
+    let img = document.createElement('img');
+    img.src = './Image/shopping.png';
+
+    let fromSubnits = document.createElement('div');
+    fromSubnits.className = 'fromSubnits';
+
+    let btn1 = document.createElement('button');
+    btn1.className = 'btn1';
+    btn1.id = 'btn1'
+    btn1.textContent = 'Cancle';
+
+    let btn2 = document.createElement('button');
+    btn2.className = 'btn2';
+    btn2.textContent = 'Create'
+
+    cardcategories.appendChild(h3);
+    cardcategories.appendChild(inputcategories);
+    inputcategories.appendChild(inputName)
+    cardcategories.appendChild(list_inputcategories);
+    list_inputcategories.appendChild(inputDrink)
+    list_inputcategories.appendChild(inputFood)
+    list_inputcategories.appendChild(inputFruits);
+    list_inputcategories.appendChild(imgPic);
+    imgPic.appendChild(img);
+    cardcategories.appendChild(fromSubnits);
+    fromSubnits.appendChild(btn1)
+    fromSubnits.appendChild(btn2)
+    categoriesCard.appendChild(cardcategories)
 
 }
 
-function addCategories(){
-    let data = JSON.parse(localStorage.getItem('data'));
-    let categorieName = document.querySelector('#name');
-    let array = [];
-    
-    let obj = {};
-    obj.categorie = categorieName.value;
-    obj.product = array;
-    data.push(obj);
-    localStorage.setItem('data', JSON.stringify(data));
-    categorieName.value = '';
-    cateoriesCard();
-}
 
 // 
 let categoriesCard = document.querySelector('.categoriesCard');
-// categoriesCard.style.display = 'none';
+categoriesCard.style.display = 'none';
 function blockCategories() {
     // let 
-    categoriesCard.style.display = 'block';
-    let buttonCancel = document.querySelector('.btn1');
-    buttonCancel.addEventListener('click', Cancle)
-    cateoriesCard();
+    let isSpanTrue = false;
+    if (span) {
+        categoriesCard.style.display = 'block';
+        isSpanTrue = true;
+    }
 }
 
-let categorieC = document.querySelector('.list-inputcategories')
 let box2Span = document.querySelector('.box2');
-let span = box2Span.querySelector('span')
+let span = box2Span.querySelector('.bx-plus');
 span.addEventListener('click', blockCategories);
+cateoriesCard()
 
-
-//  functon cancel
+// _________________function cancel___________
 function Cancle() {
-    categoriesCard.style.display = 'none';
+    if (buttonCancel) {
+        categoriesCard.style.display = 'none';
+    }
 }
-
+let buttonCancel = document.getElementById('btn1');
+buttonCancel.addEventListener('click', Cancle)
 
 

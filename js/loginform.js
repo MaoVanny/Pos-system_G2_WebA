@@ -45,58 +45,35 @@ function CardLogin() {
     loginForm.appendChild(cardlogin);
 
     button.addEventListener('click', function () {
-        addValueOfForm();
+                loginToFromProduct()
     });
 }
 
 let loginForm = document.querySelector('.login');
 let container1 = document.querySelector('.container1');
+container1.style.display = 'none';
 
+let loginPasswords = [
+    { name: 'dara', pw: '123', cf: '123' }
+];
 
-
-function addValueOfForm() {
-    let data = JSON.parse(localStorage.getItem('formvalue'));
+function loginToFromProduct() {
     let inputName = document.querySelector('.name');
     let inputPassword = document.querySelector('.password');
     let inputConfirmPassword = document.querySelector('.confirmPassword');
-    if (parseInt(inputPassword.value) === parseInt(inputConfirmPassword.value)) {
-        data.push(inputPassword.value);
-        data.push(inputConfirmPassword.value);
-        data.push(inputName.value);
+    let isLoggedIn = false;
+    for (let login of loginPasswords) {
+        if (inputName.value === login.name && inputPassword.value === login.pw && inputConfirmPassword.value === login.cf) {
+            isLoggedIn = true;
+        }
+    }
+
+    if (isLoggedIn) {
+        container1.style.display = 'block';
+        loginForm.style.display = 'none';
+
     } else {
         alert('Incorrect, please try again!');
     }
-    inputName.value = '';
-    inputPassword.value = '';
-    inputConfirmPassword.value = '';
-    localStorage.setItem('formvalue', JSON.stringify(data));
-    loginToFromProduct();
 }
-
-function loginToFromProduct() {
-
-    let valueOfinput = JSON.parse(localStorage.getItem('formvalue'));
-    if (valueOfinput.length != 0) {
-        container1.style.display = 'block';
-        loginForm.setAttribute('class', 'hide');
-    }
-}
-
-
-// closest application---------------------------
-let closeBtn = document.querySelector('.bx-power-off');
-closeBtn.addEventListener('click', () => {
-    if (window.confirm('Do you want to left you account?')) {
-        let data = JSON.parse(localStorage.getItem('formvalue'));
-        data = [];
-        container1.style.display = 'none';
-        loginForm.setAttribute('class', 'login');
-        localStorage.setItem('formvalue', JSON.stringify(data));
-    }
-
-})
-
-loginToFromProduct();
-
 CardLogin();
-
