@@ -9,7 +9,6 @@
     margin-bottom: 50%;
     border-radius: 20px;
     border: solid rgb(227, 61, 19) 3px;
-    display: none;
     /* background-color: aliceblue; */
 }
 .cardcategories h3 {
@@ -21,12 +20,6 @@
     width: 50%;
     flex-direction: column;
 }
-#groupCategorie {
-    height: 17vh;
-    display: flex;
-    flex-direction: column;
-    overflow-y: scroll;
-}
 .imgPic img{
     width: 80%;
     height: 50%;
@@ -37,7 +30,7 @@
     width: 80%;
 }
 
-.categorie,
+.list-inputcategories input[type="text"],
 .inputcategories input[type="text"] {
     padding: 8px;
     border-radius: 12px;

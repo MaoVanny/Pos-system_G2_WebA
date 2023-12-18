@@ -11,3 +11,4 @@ function search(){
     }
 };
 searchProduct.addEventListener('keyup', search);
+
