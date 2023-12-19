@@ -1,4 +1,4 @@
-.container {
+.container{
     display: grid;
     grid-template-columns: 65.5% 33%;
     height: 90vh;
@@ -6,26 +6,25 @@
     padding: 0px 8px;
 }
 
-.product-add,
-.product {
+.container1 {
+    display: none;
+}
+.product-add, .product{
     background: rgb(30, 30, 30);
     height: 90vh;
     border-radius: 5px;
 }
-
 .search-add {
     margin-top: 20px;
     display: flex;
     justify-content: center;
 }
-
-.search-add>input {
+.search-add>input{
     width: 90%;
     padding: 5px;
     font-size: 15px;
     outline: none;
 }
-
 .group-add {
     margin-top: 20px;
     height: 55vh;
@@ -34,8 +33,7 @@
     flex-direction: column;
     align-items: center;
 }
-
-.card-add {
+.card-add{
     margin-top: 5px;
     margin-bottom: 5px;
     width: 90%;
@@ -48,24 +46,21 @@
     border: 1px solid rgb(247, 49, 49);
     color: white;
 }
-
 .card-add>i {
     width: 25px;
     height: 25px;
     background: red;
 }
 
-p {
+p{
     font-size: 13px;
 }
-
-.total-pay {
+.total-pay{
     margin-top: 35px;
     height: 17vh;
     border-radius: 0px 0px 3px 3px;
     background: rgb(30, 30, 30);
 }
-
 .total-product {
     color: white;
     background: rgba(240, 51, 51, 0.861);
@@ -74,41 +69,35 @@ p {
     height: 30px;
     align-items: center;
 }
-
 .group-btn-pay {
     display: flex;
     justify-content: end;
     margin-top: 30px;
 }
-
-.pay,
-.cancel {
+.pay, .cancel {
     display: flex;
     align-items: center;
     width: 100px;
     margin-left: 20px;
     margin-right: 20px;
     border-radius: 4px;
+    cursor: pointer;
 }
-
-.cancel {
+.cancel{
     background: red;
     color: white;
 }
-
 .pay {
     background: rgb(4, 165, 4);
     color: white;
 }
 
-.pay>i,
-.cancel>i {
+.pay>i, .cancel>i {
     height: 30px;
     width: 30px;
     margin-left: 0px;
     border-radius: 4px 0px 0px 4px;
 }
-
 .cancel>i {
     background: rgb(201, 7, 7);
 }
@@ -120,7 +109,6 @@ p {
     align-items: center;
     background: rgb(30, 30, 30);
 }
-
 .search-product {
     width: 50%;
     height: 30px;
@@ -135,23 +123,22 @@ p {
     width: 90%;
     outline: none;
 }
-
 .type-bar {
     margin-left: 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    width: 35%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 50%;
     height: 30px;
     gap: 3px;
 }
-
-.type-bar>p {
+.type-bar > p {
     background: rgb(230, 48, 48);
     padding: 7px 3px;
     text-align: center;
     align-self: center;
     border-radius: 3px;
     color: white;
+    cursor: pointer;
 }
 
 /* --product-content--- */
@@ -173,11 +160,10 @@ p {
     justify-content: space-between;
     border-radius: 5px;
 }
-
 .cardfooter {
     border-top: 1px solid rgb(255, 89, 89);
     width: 100%;
-    height: 90px;
+    height: 110px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -188,9 +174,8 @@ p {
     margin-top: 5px;
     color: white;
 }
-
-.cardfooter>.btn-add {
-    margin: 10px 0px;
+.cardfooter>.btn-add, .cardfooter>.btn-show{
+    margin: 5px 0px;
     border: none;
     border-radius: 5px;
     width: 100px;
@@ -199,23 +184,22 @@ p {
     background: rgb(230, 48, 48);
     color: white;
 }
-
+.cardfooter>.btn-show{
+    background: rgb(41, 198, 250);
+}
 .card-product>h4 {
     text-align: center;
-    margin-top: 0px;
     color: rgb(255, 255, 255);
 }
-
 .product-img {
     width: 100%;
-    height: 120px;
+    height: 110px;
     background-repeat: no-repeat;
     background-size: 80px;
     background-position: center;
 }
 
-.minus,
-.plus {
+.minus, .plus {
     border: none;
     background: rgb(244, 64, 64);
     font-size: 20px;
@@ -224,6 +208,62 @@ p {
     height: 20px;
 }
 
+.history {
+    width: 100%;
+    height: 100vh;
+    background: white;
+    display: none;
+}
+
 .hide {
     display: none;
+}
+
+
+/* show product detail */
+.showProductDetail {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: white;
+    border: none;
+    border-radius: 5px;
+    position: absolute;
+    top: 150px;
+    left: 40%;
+}
+
+.info {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.info>p {
+    font-size: 18px;
+    margin-left: 30px;
+}
+
+.info>p>span {
+    font-size: 18px;
+    color: red;
+}
+
+.info-footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.info-footer>button {
+    background: rgb(22, 179, 231);
+    height: 30px;
+    width: 130px;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
 }

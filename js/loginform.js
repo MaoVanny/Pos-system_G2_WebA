@@ -17,13 +17,13 @@ function CardLogin() {
     inputName.placeholder = 'Enter Your Name';
 
     let inputPassword = document.createElement('input');
-    inputPassword.type = 'text';
+    inputPassword.type = 'password';
     inputPassword.className = 'password';
     inputPassword.id = 'password';
     inputPassword.placeholder = 'Password';
 
     let inputConfirm = document.createElement('input');
-    inputConfirm.type = 'text';
+    inputConfirm.type = 'password';
     inputConfirm.className = 'confirmPassword';
     inputConfirm.id = 'confirmPassword';
     inputConfirm.placeholder = 'Confirm Password';
@@ -45,35 +45,60 @@ function CardLogin() {
     loginForm.appendChild(cardlogin);
 
     button.addEventListener('click', function () {
-                loginToFromProduct()
+        addValueOfForm();
     });
 }
 
 let loginForm = document.querySelector('.login');
 let container1 = document.querySelector('.container1');
-container1.style.display = 'none';
 
-let loginPasswords = [
-    { name: 'dara', pw: '123', cf: '123' }
-];
 
-function loginToFromProduct() {
+
+function addValueOfForm() {
+    let data = JSON.parse(localStorage.getItem('formvalue'));
     let inputName = document.querySelector('.name');
     let inputPassword = document.querySelector('.password');
     let inputConfirmPassword = document.querySelector('.confirmPassword');
-    let isLoggedIn = false;
-    for (let login of loginPasswords) {
-        if (inputName.value === login.name && inputPassword.value === login.pw && inputConfirmPassword.value === login.cf) {
-            isLoggedIn = true;
-        }
-    }
-
-    if (isLoggedIn) {
-        container1.style.display = 'block';
-        loginForm.style.display = 'none';
-
+    if (parseInt(inputPassword.value) === parseInt(inputConfirmPassword.value)) {
+        data.push(inputPassword.value);
+        data.push(inputConfirmPassword.value);
+        data.push(inputName.value);
     } else {
         alert('Incorrect, please try again!');
     }
+    inputName.value = '';
+    inputPassword.value = '';
+    inputConfirmPassword.value = '';
+    localStorage.setItem('formvalue', JSON.stringify(data));
+    loginToFromProduct();
 }
+
+function loginToFromProduct() {
+
+    let valueOfinput = JSON.parse(localStorage.getItem('formvalue'));
+    if (valueOfinput.length != 0) {
+        container1.style.display = 'block';
+        loginForm.setAttribute('class', 'hide');
+    }
+}
+
+
+// closest application---------------------------
+let closeBtn = document.querySelector('.bx-power-off');
+closeBtn.addEventListener('click', () => {
+    if (window.confirm('Do you want to left you account?')) {
+        saveData();
+        let data = JSON.parse(localStorage.getItem('formvalue'));
+        data = [];
+        container1.style.display = 'none';
+        loginForm.setAttribute('class', 'login');
+        localStorage.setItem('formvalue', JSON.stringify(data));
+        window.location.reload();
+    }
+
+})
+
+loginToFromProduct();
+
 CardLogin();
+

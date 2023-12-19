@@ -7,7 +7,7 @@ body {
 
 header {
     width: 25%;
-    /* height: 120vh; */
+    height: 120vh;
     background-color: black;
     border-right: 2px solid rgb(161, 38, 0);
     display: flex;
@@ -156,19 +156,22 @@ a {
 
 .icons {
     display: flex;
+    justify-content: space-evenly;
 }
 
 .icons .bx {
     background-color: rgb(227, 220, 220);
-    color: black;
+    color: rgb(223, 223, 223);
+    background: rgb(206, 38, 38);
     width: 30px;
+    height: 30px;
 
 }
 
-.bx-edit,
+/* .bx-edit,
 .bx-trash {
     margin-left: 20%;
-}
+} */
 
 /* ____________________ end header ____________________*/
 
@@ -214,14 +217,16 @@ a {
 table {
     border: 1px solid black;
     border-collapse: collapse;
-    width: 98%;
+    width: 95%;
     margin: 10px;
 }
 
 th,
 td {
     border: solid 1px black;
-    padding: 10px;
+    padding: 5px;
+    width: 60px;
+    text-align: center;
     /* color: antiquewhite; */
 }
 
