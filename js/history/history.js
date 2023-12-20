@@ -64,6 +64,22 @@ function deleteHistoryTr(e) {
 
 }
 
+// -------------search in history------------------
+const inputSearch = document.querySelector('.searchproduct input');
+
+function searchHistory(){
+    let data = document.querySelectorAll('tbody tr');
+    for (let value of data){
+        if (value.children[1].textContent.toLowerCase().includes(inputSearch.value.toLowerCase())){
+            value.style.display = '';
+        }else{
+            value.style.display = 'none';
+        }
+    }
+}
+
+inputSearch.addEventListener('keyup', searchHistory);
+
 
 
 getListCardValue();

@@ -62,6 +62,7 @@ function saveData() {
     localStorage.setItem('pay', JSON.stringify(dataPay));
     localStorage.setItem('totalDash', JSON.stringify(dashboardObj));
 }
+// saveData();
 
 if (JSON.parse(localStorage.getItem('data')) === null){
     saveData();
